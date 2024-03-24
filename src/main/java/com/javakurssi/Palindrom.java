@@ -4,14 +4,12 @@ public class Palindrom {
 
     static boolean TarkistaSana(String _palindromi){
         String stringKaan = Kaanna(_palindromi);
+        stringKaan = stringKaan.replaceAll(" ", "");
         boolean onPalin = false;
-        if (stringKaan.equals(stringKaan)){
-            System.out.println("kävin täällä: true");
+        if (stringKaan.equals(_palindromi.replaceAll(" ", ""))){
             onPalin = true;
         }
 
-        System.out.println("Alkuperäinen sana: " + _palindromi);
-        System.out.println("Käännetty sana " + stringKaan);
         return onPalin;
     }
 
@@ -20,6 +18,6 @@ public class Palindrom {
         for (int i = 0; i < kaannettava.length(); i++) {
             kaannettyString = kaannettava.charAt(i) + kaannettyString;
         }
-        return kaannettyString;
+        return kaannettyString.toLowerCase();
     }
 }
